@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Uredi ljubimca</title>
+</head>
+<body>
+
+    <h1>Uredi ljubimca</h1>
+
+    <form action="/update-pet/{{ pet.id }}" method="POST">
+        <label>Ime:</label><br>
+        <input type="text" name="name" value="{{ pet.name }}" required><br><br>
+
+        <label>Vrsta:</label><br>
+        <input type="text" name="species" value="{{ pet.species }}" required><br><br>
+
+        <label>Pasmina:</label><br>
+        <input type="text" name="breed" value="{{ pet.breed }}"><br><br>
+
+        <label>Težina:</label><br>
+        <input type="number" step="0.1" name="weight" value="{{ pet.weight }}"><br><br>
+
+        <label>Bilješke:</label><br>
+        <textarea name="notes">{{ pet.notes }}</textarea><br><br>
+
+        <button type="submit">Spremi promjene</button>
+    </form>
+
+    <br>
+    <a href="/">Natrag na početnu</a>
+
+</body>
+</html>

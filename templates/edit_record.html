@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Uredi zdravstveni zapis</title>
+</head>
+<body>
+
+    <h1>Uredi zdravstveni zapis</h1>
+
+    <form action="/update-record/{{ record.id }}" method="POST">
+
+        <label>Ljubimac:</label><br>
+        <select name="pet_id">
+            {% for pet in pets %}
+                <option value="{{ pet.id }}" {% if pet.id == record.pet.id %}selected{% endif %}>
+                    {{ pet.name }}
+                </option>
+            {% endfor %}
+        </select>
+
+        <br><br>
+
+        <label>Vrsta zapisa:</label><br>
+        <select name="record_type">
+            <option {% if record.record_type == "Cijepljenje" %}selected{% endif %}>Cijepljenje</option>
+            <option {% if record.record_type == "Tretman protiv parazita" %}selected{% endif %}>Tretman protiv parazita</option>
+            <option {% if record.record_type == "Veterinarski pregled" %}selected{% endif %}>Veterinarski pregled</option>
+            <option {% if record.record_type == "Mjerenje težine" %}selected{% endif %}>Mjerenje težine</option>
+        </select>
+
+        <br><br>
+
+        <label>Opis:</label><br>
+        <input type="text" name="description" value="{{ record.description }}">
+
+        <br><br>
+
+        <label>Datum:</label><br>
+        <input type="date" name="date" value="{{ record.date }}">
+
+        <br><br>
+
+        <label>Sljedeći termin:</label><br>
+        <input type="date" name="next_due_date" value="{{ record.next_due_date }}">
+
+        <br><br>
+
+        <button type="submit">Spremi promjene</button>
+    </form>
+
+    <br>
+    <a href="/">Natrag na početnu</a>
+
+</body>
+</html>
