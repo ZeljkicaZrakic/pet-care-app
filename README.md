@@ -61,9 +61,10 @@ pet_care_app/
 │
 ├── app.py
 ├── models.py
-├── requirements.txt
 ├── Dockerfile
+├── requirements.txt
 ├── pets.sqlite
+│── README.md
 │
 ├── templates/
 │   ├── index.html
@@ -73,10 +74,10 @@ pet_care_app/
 ├── static/
 │   ├── css/
 │   │   └── style.css
-│   └── images/
+│   └── js/
+│       └── script.js
+    └── images/
 │       └── zed.jpg
-│
-└── README.md
 ```
 
 ## Model podataka
