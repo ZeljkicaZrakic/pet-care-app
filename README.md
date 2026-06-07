@@ -56,6 +56,7 @@ Git
 GitHub
 
 ## Struktura projekta
+```text
 pet_care_app/
 │
 ├── app.py
@@ -76,6 +77,7 @@ pet_care_app/
 │       └── zed.jpg
 │
 └── README.md
+```
 
 ## Model podataka
 
